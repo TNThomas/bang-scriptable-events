@@ -1,0 +1,12 @@
+{
+    "name": "com.bang.scriptable-events.Editor",
+    "references": [
+        "com.bang.scriptable-events"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}
