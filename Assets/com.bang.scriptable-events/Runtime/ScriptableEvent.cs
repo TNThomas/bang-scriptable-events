@@ -6,8 +6,9 @@ namespace Bang.Events
     [CreateAssetMenu(fileName = "NewScriptEvent", menuName = "Events/Scriptable Event")]
     public class ScriptableEvent : ScriptableObject
     {
-
-        private readonly List<IEventListener> listeners = new List<IEventListener>();
+        [HideInInspector]
+        [SerializeReference]
+        private List<IEventListener> listeners = new List<IEventListener>();
 
         public bool HasListener(IEventListener listener)
         {
