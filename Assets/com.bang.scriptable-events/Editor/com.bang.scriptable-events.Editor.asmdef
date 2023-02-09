@@ -1,0 +1,18 @@
+{
+    "name": "com.bang.scriptable-events.Editor",
+    "rootNamespace": "Bang.Events.Editors",
+    "references": [
+        "com.bang.scriptable-events"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

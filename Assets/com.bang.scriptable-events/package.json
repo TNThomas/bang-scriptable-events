@@ -1,0 +1,7 @@
+{
+  "name": "com.bang.scriptable-events",
+  "version": "0.0.0",
+  "displayName": "Scriptable Events",
+  "description": "Event system for Unity based upon Ryan Hipple's implementation presented at Unite 2017",
+  "unity": "2021.3"
+}
