@@ -7,16 +7,16 @@ namespace Bang.Events.Tests
     public class ScriptableEventTest
     {
         private GameObject gameObject;
-        EventListenerBehaviour listener;
-        EventListenerBehaviour listener2;
+        EventListener<InvokableUnityEvent> listener;
+        EventListener<InvokableUnityEvent> listener2;
         ScriptableEvent testEvent;
 
         [SetUp]
         public void BeforeEach()
         {
             gameObject = new GameObject("eventHost");
-            listener = gameObject.AddComponent<EventListenerBehaviour>();
-            listener2 = gameObject.AddComponent<EventListenerBehaviour>();
+            listener = new EventListener<InvokableUnityEvent>();
+            listener2 = new EventListener<InvokableUnityEvent>();
             testEvent = ScriptableObject.CreateInstance<ScriptableEvent>();
         }
         [TearDown]
@@ -82,21 +82,15 @@ namespace Bang.Events.Tests
             {
                 listenerInvoked = false;
                 listener2Invoked = false;
-                UnityAction action = new UnityAction(() => listenerInvoked = true);
-                UnityAction action2 = new UnityAction(() => listener2Invoked = true);
-                listener.Response.AddListener(action);
-                listener2.Response.AddListener(action2);
-                testEvent.RegisterListener(listener);
-                testEvent.RegisterListener(listener2);
+                listener.Event = testEvent;
+                listener2.Event = testEvent;
+                listener.Enabled = true;
+                listener2.Enabled = true;
+                listener.Response.AddListener(new UnityAction(() => listenerInvoked = true));
+                listener2.Response.AddListener(new UnityAction(() => listener2Invoked = true));
             }
             [Test]
-            public void InvokeListener()
-            {
-                testEvent.Raise();
-                Assert.IsTrue(listenerInvoked);
-            }
-            [Test]
-            public void InvokeMultipleListeners()
+            public void InvokeListeners()
             {
                 testEvent.Raise();
                 Assert.IsTrue(listenerInvoked);

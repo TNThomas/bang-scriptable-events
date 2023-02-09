@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,9 +9,9 @@ namespace Bang.Events
     {
         [HideInInspector]
         [SerializeReference]
-        private List<IEventListener> listeners = new List<IEventListener>();
+        private List<EventListener> listeners = new List<EventListener>();
 
-        public bool HasListener(IEventListener listener)
+        public bool HasListener(EventListener listener)
         {
             return listeners.Contains(listener);
         }
@@ -21,7 +22,7 @@ namespace Bang.Events
                 listeners[i].OnEventRaised();
         }
 
-        public void RegisterListener(IEventListener listener)
+        public void RegisterListener(EventListener listener)
         {
             if ((listener != null)
                 && (!listeners.Contains(listener)))
@@ -30,7 +31,7 @@ namespace Bang.Events
             }
         }
 
-        public bool UnregisterListener(IEventListener listener)
+        public bool UnregisterListener(EventListener listener)
         {
             return listeners.Remove(listener);
         }

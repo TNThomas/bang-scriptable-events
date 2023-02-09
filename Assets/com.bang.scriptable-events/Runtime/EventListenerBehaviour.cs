@@ -1,35 +1,30 @@
-using Unity.VisualScripting.YamlDotNet.Core.Tokens;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Bang.Events
 {
-    public class EventListenerBehaviour : MonoBehaviour, IEventListener
+    public class EventListenerBehaviour : MonoBehaviour
     {
-        [Tooltip("Event to register with.")]
         [SerializeField]
-        private ScriptableEvent _event;
-        public ScriptableEvent Event
-        {
-            get => _event;
-            set => _event = value;
-        }
-
-        [Tooltip("Unity Event to perform when the Scriptable Event is raised.")]
-        [SerializeField]
-        private UnityEvent response;
-        public UnityEvent Response => response;
+        private List<UnityEventCallback> listeners;
 
         private void OnEnable()
         {
-            response ??= new UnityEvent();
-            _event?.RegisterListener(this);
+            Debug.Log("Enabling listeners");
+            foreach (EventListener listener in listeners)
+            {
+                Debug.Log(listener.Event);
+                listener.Enabled = (listener.Event != null);
+                Debug.Log(listener.Enabled);
+            }
         }
 
         private void OnDisable()
-        { _event?.UnregisterListener(this); }
-
-        public void OnEventRaised()
-        { response?.Invoke(); }
+        {
+            foreach (EventListener listener in listeners)
+            {
+                listener.Enabled = false;
+            }
+        }
     }
 }

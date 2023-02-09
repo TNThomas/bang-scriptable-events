@@ -1,6 +1,6 @@
 {
     "name": "com.bang.scriptable-events",
-    "rootNamespace": "bang.Events",
+    "rootNamespace": "Bang.Events",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

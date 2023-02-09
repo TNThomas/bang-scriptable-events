@@ -133,8 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 227960878}
   - component: {fileID: 227960877}
-  - component: {fileID: 227960880}
   - component: {fileID: 227960879}
+  - component: {fileID: 227960880}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -233,22 +233,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c8aae82b42d14542b876c0c27ed6bab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _event: {fileID: 11400000, guid: 08b95017013aff24c98dabd6a3477d36, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 227960879}
-        m_TargetAssemblyTypeName: ColorChanger, Assembly-CSharp
-        m_MethodName: RotateHue
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0.2
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  listeners:
+  - event: {fileID: 11400000, guid: 08b95017013aff24c98dabd6a3477d36, type: 2}
+    _response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 227960879}
+          m_TargetAssemblyTypeName: ColorChanger, Assembly-CSharp
+          m_MethodName: RotateHue
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0.2
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &976504760
 GameObject:
   m_ObjectHideFlags: 0
