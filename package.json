@@ -1,6 +1,6 @@
 {
   "name": "com.bang.scriptable-events",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "unity": "2021.3",
   "displayName": "Scriptable Events",
   "description": "Event system for Unity based upon Ryan Hipple's implementation presented at Unite 2017",
@@ -11,11 +11,11 @@
     "commit": "git-cz"
   },
   "keywords": [
-  "unity3d",
-  "unity3d-plugin",
-  "event",
-  "event-system"
-],
+    "unity3d",
+    "unity3d-plugin",
+    "event",
+    "event-system"
+  ],
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"

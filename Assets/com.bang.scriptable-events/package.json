@@ -1,7 +1,27 @@
 {
   "name": "com.bang.scriptable-events",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "displayName": "Scriptable Events",
   "description": "Event system for Unity based upon Ryan Hipple's implementation presented at Unite 2017",
-  "unity": "2021.3"
+  "unity": "2021.3",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TNThomas/bang-scriptable-events.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TNThomas/bang-scriptable-events/issues"
+  },
+  "homepage": "https://github.com/TNThomas/bang-scriptable-events#readme",
+  "keywords": [
+    "unity3d",
+    "unity3d-plugin",
+    "event",
+    "event-system"
+  ],
+  "author": {
+    "name": "Tabris Thomas",
+    "email": "tnthomas748+bang@gmail.com",
+    "url": "https://github.com/TNThomas"
+  }
 }
