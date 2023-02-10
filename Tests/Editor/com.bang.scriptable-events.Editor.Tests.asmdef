@@ -1,0 +1,19 @@
+{
+    "name": "com.bang.scriptable-events.Editor.Tests",
+    "references": [
+        "com.bang.scriptable-events",
+        "com.bang.scriptable-events.Editor"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}
